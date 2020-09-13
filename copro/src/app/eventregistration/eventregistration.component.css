@@ -1,0 +1,20 @@
+.padding {
+    padding: 5rem !important
+}
+
+.form-control:focus {
+    box-shadow: 10px 0px 0px 0px #ffffff !important;
+    border-color: #4ca746
+}
+#show_bg_2 {
+    background-image:
+    linear-gradient(180deg, rgba(252,252,252,1) 0%, rgba(197,198,193,0.8281513288909313) 67%, rgba(234,238,214,0.8477591720281863) 100%),
+   /* linear-gradient(0deg, rgba(185,149,213,0.43039222524947474) 0%, rgba(58,149,213,0.8505602924763656) 25%),
+    linear-gradient(113deg, rgba(163,236,220,1) 0%, rgba(139,193,237,0.4107843821122199) 70%),*/
+    url('/assets/img/evntregistration.jpg');
+    width: 1900px;
+    height: 1000px;
+    background-size: cover;
+    color: black;
+    padding: 20px;
+  }

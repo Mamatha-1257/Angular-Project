@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        button:hover,
+        a:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+
+<body id = "show_bg_2">
+<br><br>
+    <h2 style="text-align:center">Event Details</h2>
+
+    <div class="card">
+        <img src="RESTAPI/image/{{event.poster}}" alt="John" style="width:100%">
+        <h1><b>{{event.name}}</b></h1>
+        <h4><b>Event Type : {{event.eventTag}}</b></h4>
+        <h4><b>Event Domain : {{event.eventDomain}}</b></h4>
+       <h4><b>Contact Number : {{event.mobile}}</b></h4>
+       <h4><b>Registration Fee : {{event.regFee}}</b></h4>
+        <h4><b>Start Date : {{event.startDate | date:"dd-MM-yyyy"}}</b></h4>
+        <h4><b>End Date : {{event.endDate | date:"dd-MM-yyyy"}}</b></h4>
+        <h4><b>Description : {{event.details}}</b></h4>
+        <h4><b>Event URL : {{event.eventUrl}}</b></h4>
+        <h4><b>Venue : {{event.address.street}}, {{event.address.area}}, {{event.address.city}}, {{event.address.state}}</b></h4>
+
+        <button  class="btn btn-primary btn-block" (click)="pay(event.regFee)"><a routerLink = "pay">Make Payment</a></button>
+    </div>
+
+</body>
+
+</html>

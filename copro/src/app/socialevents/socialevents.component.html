@@ -1,0 +1,35 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    <body id = "show_bg_2">
+
+    <section class="py-5">
+        <div class="container">
+          <h1 class="display-4">SocialEvents</h1>
+        </div>
+      </section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-6 mb-4" *ngFor="let se of allevents">
+            <div  *ngIf="calTime(se.startDate | date:'dd-MM-yyyy') === true" class="card h-100">
+              <a href="#"><img class="card-img-top" src="RESTAPI/image/{{se.poster}}" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  Event Name : {{se.eventName}}
+                </h4>
+                <p class="card-text">
+                  Event Domain : {{se.eventDomain}} <br>
+                  Registration Fee : {{se.regFee}} <br>
+                  Venue : {{se.address.street}}, {{se.address.area}}, {{se.address.city}}, {{se.address.state}} <br>
+                  Contact No: {{se.mobile}} <br>
+                  Timings: {{se.startDate | date:"dd-MM-yyyy"}} - {{se.endDate | date:"dd-MM-yyyy"}} <br>
+                  <button class="btn btn-primary" width="300px"  (click)="eventRegister(se)" routerLink="eventregistration">Register</button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+      </div>
+</body>

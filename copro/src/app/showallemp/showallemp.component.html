@@ -1,0 +1,58 @@
+
+   <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body id = "show_bg_2">
+
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<div class = "container">
+    
+  <h1 style = "text-align:center;"><b style = color:black>List of Employees...</b></h1>
+  <br><br>
+<table class="table table-bordered tabl-stripped table-hover" >
+    <thead class="thead-dark">
+    <tr class="bg-info text-white">
+        <th scope="col" style = "text-align:center; font-size: large; width:5%;"><b>Id</b></th>
+        <th scope="col" style = "text-align:center; font-size: large; width:19%;">Name</th>
+        <th scope="col" style = "text-align:center; font-size: large; width:20%;">Mail</th>
+        <th scope="col" style = "text-align:center; font-size: large; width:5%;">Mobile</th>
+        <th scope="col" style = "text-align:center; font-size: large; width:15%;">Interest</th>
+        <th scope="col" style = "text-align:center; font-size: large; width:15%;">Interest</th>
+        <th scope="col" style = "text-align:center; font-size: large; width:10%;">Interest</th>
+        <th scope="col" style = "text-align:center; font-size: large; width:5%;">Status</th>
+        <th scope="col"  style = "text-align:center; font-size: large; width:3%;" colspan=2>Action</th>
+        <th scope="col" style = "text-align:center; font-size: large; width:3%;">Delete</th>
+    </tr>
+</thead>
+<tbody style = "background-color: azure;">
+      <tr *ngFor='let emp of emp '>
+        <td style = "text-align:center; font-size: larger;">{{emp.empId}}</td>
+        <td style = "text-align:center; font-size: larger;">{{emp.empName}}</td>
+        <td style = "text-align:center; font-size: larger;">{{emp.empMail}}</td>
+        <td style = "text-align:center; font-size: larger;">{{emp.mobile}}</td>
+        <td style = "text-align:center; font-size: larger;">{{emp.interest1}}</td>
+        <td style = "text-align:center; font-size: larger;">{{emp.interest2}}</td>
+        <td style = "text-align:center; font-size: larger;">{{emp.interest3}}</td>
+        <td style = "text-align:center; font-size: larger;">{{emp.status}}</td>
+
+        <td>
+            <button (click)="RejectEmp(emp)" class = "glyphicon glyphicon-remove">Reject</button>
+        </td>
+
+        <td>
+            <button (click)="AcceptEmp(emp)" class = "glyphicon glyphicon-ok">Accept</button>
+    </td>
+
+    <td>
+        <button (click)="deleteEmp(emp)" class = "glyphicon glyphicon-trash">Delete</button>
+</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</body>

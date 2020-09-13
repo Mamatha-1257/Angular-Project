@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+ <body id = "show_bg_2">
+   
+  <div class="col-md-4 col-sm-6" style = "text-align:center; margin-top:10%;margin-left:12%; height:800px;">
+
+    <div class="box13" >
+        <img src="assets/img/avatar.jpg" style= "height:550px; width:600px;">
+        <div class="box-content">
+          <h2><b>Profile</b></h2>
+          <br>
+          <p style = "font-size: 22px"><b>Id :  </b>{{myEmp.empId}} </p>
+          <p style = "font-size: 22px"><b>Name :  </b>{{myEmp.empName}} </p>
+          <p style = "font-size: 22px"><b>E-Mail :  </b>{{myEmp.empMail}} </p>
+          <p style = "font-size: 22px"><b>Contact :  </b>{{myEmp.mobile}} </p>
+          <p style = "font-size: 22px"><b>Interest 1 :  </b>{{myEmp.interest1}}</p>
+          <p style = "font-size: 22px"><b>Interest 2 :  </b>{{myEmp.interest2}}</p>
+          <p style = "font-size: 22px"><b>Interest 3 :  </b>{{myEmp.interest3}}</p>
+          <br>
+          <button class="btn btn-primary" style= "width:200px;" (click)="showEditPopup(employee)">Edit</button>
+            <!--h3 class="title">Williamson</h3-->
+        </div>
+    </div>
+  </div>
+  <!--div class="wrapper"><br><br>
+    <form class="form-signin">
+      <h2 class="form-signin-heading"><b>Profile</b></h2>
+      <br>
+      <img src="assets/img/img_avatar.png" alt="Avatar" class="rounded-circle img-responsive" style="width:180px"><br><br>
+      <p style = "font-size: 17px"><b>Id :  </b>{{myEmp.empId}} </p>
+
+      <p style = "font-size: 17px"><b>Name :  </b>{{myEmp.empName}} </p>
+
+      <p style = "font-size: 17px"><b>E-Mail :  </b>{{myEmp.empMail}} </p>
+      <p style = "font-size: 17px"><b>Contact :  </b>{{myEmp.mobile}} </p>
+      <p style = "font-size: 17px"><b>Interest 1 :  </b>{{myEmp.interest1}}</p>
+      <p style = "font-size: 17px"><b>Interest 2 :  </b>{{myEmp.interest2}}</p>
+      <p style = "font-size: 17px"><b>Interest 3 :  </b>{{myEmp.interest3}}</p>
+      <button class="btn btn-primary" (click)="showEditPopup(employee)">Edit</button>
+    </form>
+  </div-->
+  <div clas="container" >
+    <div class="modal" id="empModel">
+        <div class="modal-dialog">
+            <div class="modal-content" style =  "background-image:
+            linear-gradient(180deg, rgba(252,252,252,1) 0%, rgba(197,198,193,0.8281513288909313) 67%, rgba(234,238,214,0.8477591720281863) 100%);">
+
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+
+                </div>
+
+                <div class="modal-body" >
+                    <form class="form-group" style = "text-align:left; font-size:20px;">
+                        <!--Enter Employee Id:<input type="number" name="empId" [(ngModel)]="editObject.empId" class="form-control" ><br/>-->
+                        Employee Name:<input type="text" name="empName" [(ngModel)]="editObject.empName" class="form-control" ><br/>
+                        Employee Mail:<input type="mail" name="empMail" [(ngModel)]="editObject.empMail" class="form-control"><br/>
+                        Employee Password:<input type="password" name="empPassword" [(ngModel)]="editObject.empPassword" class="form-control"  ><br/>
+                        Mobile No:<input type="text" name="mobile" [(ngModel)]="editObject.mobile" class="form-control" ><br/>
+                       Interest: <select placeholder="Interest1" name="eventDomain" [(ngModel)]="editObject.interest1" class="form-control" ><br/>
+                          <option value="AI">AI</option>
+                          <option value="ML">ML</option>
+                          <option value="DATA SCIENCE">DATA SCIENCE</option>
+                          <option value="JAVA">JAVA</option>
+                          <option value="PYTHON">PYTHON</option>
+                          <option value="C">C</option>
+                          <option value="IOT">IOT</option>
+                       </select><br>
+                        <select placeholder="Interest2" name="eventDomain" [(ngModel)]="editObject.interest2" class="form-control" ><br/>
+                          <option value="AI">AI</option>
+                          <option value="ML">ML</option>
+                          <option value="DATA SCIENCE">DATA SCIENCE</option>
+                          <option value="JAVA">JAVA</option>
+                          <option value="PYTHON">PYTHON</option>
+                          <option value="C">C</option>
+                          <option value="IOT">IOT</option>
+                        </select><br>
+                        <select placeholder="Interest3" name="eventDomain" [(ngModel)]="editObject.interest3" class="form-control" ><br/>
+                          <option value="AI">AI</option>
+                          <option value="ML">ML</option>
+                          <option value="DATA SCIENCE">DATA SCIENCE</option>
+                          <option value="JAVA">JAVA</option>
+                          <option value="PYTHON">PYTHON</option>
+                          <option value="C">C</option>
+                          <option value="IOT">IOT</option>
+                        </select>
+                      </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" (click) = "updateEmp()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+      </div>
+      </div>
+      </body>
+

@@ -1,0 +1,15 @@
+<div>
+  <img src = "/assets/img/users.png" id = "icon" alt = "User Icon"/>
+</div>
+
+<form #signUpForm="ngForm">
+  <input type="text"  name="fullName"
+      placeholder="Username" required >
+ <br>
+  <input type="text" name="email" placeholder="Email">
+  <br>
+  <input type="password"  name="password"
+      placeholder="Password" minlength="4" required>
+  <br>
+      <input type="submit" value="Sign-Up">
+</form>

@@ -1,0 +1,44 @@
+<body id = "show_bg_2">
+  <div class="wrapper fadeInDown">
+
+    <div id="formContent" style="background:rgb(0,0,0,0.35);">
+
+     <div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4" style = "font-size: 50px; font-style: italic;"><b>Login</b></h3>
+              <form action="action_page.php" method="post" #LoginForm="ngForm" (ngSubmit)="Login(LoginForm.value)"
+                novalidate>
+                <label for="inputEmail" style = "font-size: 25px ;">Email </label>
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" style ="text-align: center;" placeholder="Email address" name="Mail"
+                    ngModel required>
+                </div>
+                <label for="inputPassword" style = "font-size: 25px ;">Password</label>
+                <div class="form-label-group">
+
+                  <input type="password" required maxlength=10 minlength=4  style ="text-align: center;" placeholder="Enter Password" name="Password"
+                  ngModel required>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                type="submit" style="width: 300px;" [disabled]="!LoginForm.valid">LogIn</button>
+                <h5>Don't have an account?<a routerLink="cmpregister" style="color:white;">Signup</a></h5>
+                <div class="text-center">
+                 </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+</body>

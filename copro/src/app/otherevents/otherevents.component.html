@@ -1,0 +1,61 @@
+<!--h2>List of Events</h2>
+<div class="row offset-md-1" style="margin-top: 4px">
+<div class="col-md-3" *ngFor="let event of events">
+    <div class="card" style="width: 18re;">
+
+    <img class="card-img-top"  alt="Card image cap" src="RESTAPI/image/{{event.poster}}" />
+<div class="card-body">
+    <p class="card-test">Event Name : {{event.eventName}}</p>
+</div>
+<div class="card-body">
+    <p class="card-test">Event Type : {{event.eventTag}}</p>
+</div>
+<div class="card-body">
+    <p class="card-test">Event Domain : {{event.eventDomain}}</p>
+</div>
+<div class="card-body">
+    <p class="card-test">Venue : {{event.address.street}}, {{event.address.area}}, {{event.address.city}}, {{event.address.state}}</p>
+</div>
+<div class="card-body">
+    <p class="card-test">Contact No: {{event.mobile}}</p>
+</div>
+<div class="card-body">
+    <p class="card-test">Timings: {{event.startDate}} - {{event.endDate}}</p>
+</div>
+
+</div>
+</div>
+</div-->
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    <body id = "show_bg_2">
+ <div class="container mt-40">
+  <br>
+  <h1 class="display-4">Events</h1>
+    <p class="lead">Explore all upcoming events.Event where small group of people that focuses especially on techniques and skills in a particular field.</p>
+  <div class="row mt-30">
+      <div class="col-md-4 col-sm-6" *ngFor="let others of allEvents">
+        <div  *ngIf="calTime(others.startDate | date:'dd-MM-yyyy') === true" class="card h-100">
+          <div class="box4" style = "height:400px; width:380px; text-align: center;">
+              <img src="RESTAPI/image/{{others.poster}}" style = "height:380px; width:350px;">
+              <div class="box-content" style = "font-size:20px; color:black">
+                  <h2 class="title">{{others.eventName}}</h2>
+                  <h3 class = "title">{{others.eventDomain}}</h3>
+                  <p><b>
+                    Registration Fee : {{others.regFee}} <br>
+              Venue : {{others.address.street}}, {{others.address.area}}, {{others.address.city}}, {{others.address.state}} <br>
+              Contact No: {{others.mobile}} <br>
+              Timings: {{others.startDate | date:"dd-MM-yyyy"}} - {{others.endDate | date:"dd-MM-yyyy"}} <br><br>
+              <button class="btn btn-primary" width="300px"  (click)="eventRegister(others)" routerLink="eventregistration">Register</button>
+                </b> </p>
+                  
+              </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </body>
+  

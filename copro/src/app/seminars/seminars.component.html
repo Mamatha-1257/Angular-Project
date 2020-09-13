@@ -1,0 +1,71 @@
+<!--h2>List of events</h2>
+<div class="row offset-md-1" style="margin-top: 4px">
+<div class="col-md-3" *ngFor="let event of events">
+    <div class="card" style="width: 18re;">
+
+    <img class="card-img-top"  alt="Card image cap" src="RESTAPI/image/{{event.poster}}" />
+<div class="card-body">
+    <p class="card-test">Event Name : {{event.eventName}}</p>
+</div>
+<div class="card-body">
+    <p class="card-test">Event Type : {{event.eventTag}}</p>
+</div>
+<div class="card-body">
+    <p class="card-test">Event Domain : {{event.eventDomain}}</p>
+</div>
+<div class="card-body">
+    <p class="card-test">Venue : {{event.address.street}}, {{event.address.area}}, {{event.address.city}}, {{event.address.state}}</p>
+</div>
+<div class="card-body">
+    <p class="card-test">Contact No: {{event.mobile}}</p>
+</div>
+<div class="card-body">
+    <p class="card-test">Timings: {{event.startDate}} - {{event.endDate}}</p>
+</div>
+
+</div>
+</div>
+</div-->
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<body id="show_bg_2">
+<br>
+  <!--emphomeheader *ngIf="!router.url.includes('seminars')"></emphomeheader-->
+  <div class="container mt-40"><br>
+    <h1 class="display-4">Seminars</h1><br>
+    <p class="lead">A form of academic instruction, either at an academic institution or offered by a commercial or
+      professional organization. It has the function of bringing together small groups focusing each time on some
+      particular subject, in which everyone present is requested to participate.</p><br>
+    <div class="row mt-30">
+      <div class="col-md-4 col-sm-6" *ngFor="let event of events">
+        <div *ngIf="calTime(event.startDate | date:'dd-MM-yyyy') === true" class="card h-100">
+          <div class="box14" style="height:400px; width:380px; text-align: center; border-radius: 5%;">
+            <img src="RESTAPI/image/{{event.poster}}" style="height:380px; width:350px; border-radius: 5%;">
+            <div class="box-content" style="color:black; font-size:20px;">
+              <h2 class="title">{{event.eventTag}}<br><br>
+                Event Name : {{event.eventName}}
+                <br><br>
+                Event Domain : {{event.eventDomain}} <br><br>
+                Registration Fee : {{event.regFee}} <br><br>
+                Venue : {{event.address.street}}, {{event.address.area}} , {{event.address.city}}
+                <br><br>
+                Contact No: {{event.mobile}} <br><br>
+                Timings: {{event.startDate | date:"dd-MM-yyyy"}} - {{event.endDate | date:"dd-MM-yyyy"}} <br><br></h2>
+            </div><br><br>
+            <button class="btn btn-primary" width="500px" (click)="eventRegister(event)"
+              routerLink="eventregistration">Register</button>
+              </div>
+
+
+        </div>
+
+</div>
+</div>
+
+
+      </div>
+</body>

@@ -1,0 +1,143 @@
+<div *ngIf="!userck(); then thenBlock else elseBlock"></div>
+
+<ng-template #thenBlock>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark   fixed-top" style="background:black;height:25px;">
+    <div class="container">
+      <a class="nav-link" href="#"><img src="assets/img/co.png" height="70px"><span class="sr-only">(current)</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="cmpregister"><b>
+                <h4 style="text-decoration-color: white; ">Register</h4>
+              </b></a>
+          </li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="login"><b>
+                <h4 style="text-decoration-color: white; ">Login</h4>
+              </b></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</ng-template>
+<ng-template #elseBlock>
+  <div *ngIf="!empck(); then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark    fixed-top" style="background:black;">
+      <a class="navbar-brand" routerLink="cmphome"><img src="assets/img/co.png" height="70px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="cmphome">
+              <h3><b>Home</b></h3>
+            </a>
+          </li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="getcompcode">
+              <h3><b>Company Code</b></h3>
+            </a>
+          </li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="showemp">
+              <h3><b>Employees</b></h3>
+            </a>
+          </li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="viewMyEvents">
+              <h3><b>Events</b></h3>
+            </a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="postevent">
+              <h3><b>Post an Event</b></h3>
+            </a>
+          </li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">
+              <h3><b>LogOUT</b></h3>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </ng-template>
+  <ng-template #elseBlock>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background:black;">
+      <a class="navbar-brand" routerLink="emphome"><img src="assets/img/co.png" height="70px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="emphome">
+              <h4><b>Home</b></h4>
+            </a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="viewEmpProfile">
+              <h4><b>Profile</b></h4>
+            </a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="myevents">
+              <h4><b>Registered Events</b></h4>
+            </a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="searchByEventName">
+              <h4><b>Search Event</b></h4>
+            </a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="hackathons">
+              <h4><b>Hackathons</b></h4>
+            </a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seminars">
+              <h4><b>Seminars</b></h4>
+            </a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="workshops">
+              <h4><b>Workshops</b></h4>
+            </a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="socialevents">
+              <h4><b>Social Events</b></h4>
+            </a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link" routerLink="others">
+              <h4><b>Other Events</b></h4>
+            </a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li>
+              <a class="nav-link" (click)="logout()">
+                <h4><b>LogOUT</b></h4>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </ng-template>
+</ng-template>

@@ -1,0 +1,32 @@
+
+   <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body id="show_bg_2">
+<br><br><br><br><br>
+
+<div class = "container">
+    <h1 style = "text-align:center;"><b>Registered Employees...</b></h1>
+    <br><br>
+<table class="table table-bordered tabl-stripped table-hover">
+    <thead class="thead-dark">
+    <tr class="bg-info text-white">
+        <th style = "text-align:center; font-size: large;" scope="col">Employee Id</th>
+        <th  style = "text-align:center; font-size: large;" scope="col">Employee Name</th>
+        <!--th scope="col">CompanyName</th-->
+        <th style = "text-align:center; font-size: large;" scope="col">Employee Mail</th>
+    </tr>
+</thead>
+<tbody style = "background-color: azure;">
+      <tr *ngFor='let emp of empList '>
+
+        <td style = "text-align:center; font-size: larger;">{{emp.empId}}</td>
+        <td style = "text-align:center; font-size: larger;">{{emp.empName}}</td>
+        <!--td>{{emp.companyName}}</td-->
+        <td style = "text-align:center; font-size: larger;">{{emp.empMail}}</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</body>

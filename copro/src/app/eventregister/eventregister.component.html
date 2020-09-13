@@ -1,0 +1,233 @@
+<link rel="stylesheet" type="text/css" href="/node_modules/angular5-toaster/toaster.css" />
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .input-container {
+      display: -ms-flexbox;
+      /* IE10 */
+      display: flex;
+      width: 90%;
+      margin-bottom: 15px;
+    }
+
+    .icon {
+      padding: 10px;
+      background: dodgerblue;
+      color: white;
+      min-width: 50px;
+      text-align: center;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      outline: none;
+    }
+
+    .input-field:focus {
+      border: 2px solid dodgerblue;
+    }
+
+    /* Set a style for the submit button */
+    .btn {
+      background-color: dodgerblue;
+      color: white;
+      padding: 15px 15px;
+      border: none;
+      cursor: pointer;
+      width: 50%;
+      opacity: 0.9;
+
+    }
+
+    button {
+      margin-top: 25px;
+      width: 80px;
+      font-size: 19px;
+      margin-left: 20%;
+
+    }
+    .btn{
+    background-color:dodgerblue;
+    }
+    .btn:hover {
+      opacity: 1;
+    }
+
+    .container {
+      background: transparent;
+      padding: 30px;
+      width: 650px;
+      height: 800px;
+      color: black;
+      top: 40%;
+      left: 35%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+      border-radius: 3px;
+      box-shadow: -1px 1px 60px 10px black;
+      margin-top: 75px;
+    }
+
+    body {
+      background-image: url("assets/img/event.jpg");
+      background-size: 100% 100%;
+      width: 100%;
+      height: 1000px;
+      background-attachment: fixed;
+      font-family: new time 'Times New Roman', Times, serif;
+
+    }
+  </style>
+
+</head>
+
+<body id = "show_bg_2">
+  <div class="wrapper fadeInDown">
+  
+  <div class="container" style="width:110%; margin-left:15%;align-content:center;">
+    <br>
+    <br>
+    <form action="/action_page.php" style="max-width:1000px; width:110%; align-content:center;" #eventForm="ngForm" (ngSubmit)="OnSubmit(eventForm.value)">
+      <h1 style="text-align: center; color:black"><b>Event Details</b></h1><br><br>
+      <div class = "row">
+      <div class = "col">
+      <div class="input-container">
+        <i class="fa fa-bullhorn icon"></i>
+        <input class="input-field" type="text" placeholder="Event name" ngModel #eventName='ngModel' name="eventName" [(ngModel)]='events.eventName' required>
+        <div *ngIf="eventName.touched && eventName.errors?.required" class="alert alert-danger">This field is required</div>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-tags icon"></i>
+        <select class="input-field" type="text" placeholder="Event type" ngModel #eventTag='ngModel' name="eventTag" [(ngModel)]='events.eventTag' required>
+          <option value = "" disabled select hidden>select event category</option>
+          <option value="Hackathons">Hackathon</option>
+          <option value="Workshops">Workshop</option>
+          <option value="Seminars">Seminar</option>
+          <option value="Seminars">SocialEvent</option>
+          <option value="Others">Others</option>
+        </select>
+        <div *ngIf="eventTag.touched && eventTag.errors?.required" class="alert alert-danger">This field is required</div>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-server icon"></i>
+        <select class="input-field" type="text" placeholder="Event Domain" ngModel #eventDomain="ngModel" name="eventDomain" [(ngModel)]='events.eventDomain' required>
+          <option value = "" disabled select hidden>select event domain</option>
+          <option value="AI">AI</option>
+          <option value="ML">ML</option>
+          <option value="DATA SCIENCE">DATA SCIENCE</option>
+          <option value="JAVA">JAVA</option>
+          <option value="PYTHON">PYTHON</option>
+          <option value="C">C</option>
+          <option value="IOT">IOT</option>
+        </select>
+        <div *ngIf="eventDomain.touched && eventDomain.errors?.required" class="alert alert-danger">This field is required</div>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-phone icon"></i>
+        <input class="input-field" type="text" placeholder="Mobile" ngModel #mobile="ngModel" name="mobile" [(ngModel)]='events.mobile' minlength=10 maxlength=10 required>
+        <div *ngIf="mobile.touched && mobile.errors?.required" class="alert alert-danger">please enter mobile number
+        </div>
+        <div *ngIf="mobile.touched && mobile.errors?.minlength" class="alert alert-danger">Please enter atleast 10 digits
+        </div>
+        <div *ngIf="mobile.touched && mobile.errors?.maxlength" class="alert alert-danger">Can't exceed 10 digits
+        </div>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-phone icon"></i>
+        <input class="input-field" type="text" placeholder="Registration fee" ngModel #regFee="ngModel" name="regFee" [(ngModel)]='events.regFee'>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-calendar icon"></i>
+        <input class="input-field" type="date" [min]="minDate" ngModel #startDate="ngModel" placeholder="starting Date" name="startDate" [(ngModel)]='events.startDate' required>
+        <div *ngIf="startDate.touched && startDate.errors?.required" class="alert alert-danger">This field is required</div>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-calendar icon"></i>
+        <input class="input-field" type="date" [min]="minDate" ngModel #endDate="ngModel" placeholder="ending Date" name="endDate" [(ngModel)]='events.endDate' required>
+        <div *ngIf="endDate.touched && endDate.errors?.required" class="alert alert-danger">This field is required</div>
+      </div>
+
+
+</div>
+<div class = "col">
+      <div class="input-container">
+        <i class="fa fa-map-signs icon"></i>
+        <input class="input-field" type="text" placeholder="Street" ngModel #street="ngModel" name="street"
+          [(ngModel)]='events.address.street' required>
+        <div *ngIf="street.touched && street.errors?.required" class="alert alert-danger">please enter state
+        </div>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-map-marker icon"></i>
+        <input class="input-field" type="text" placeholder="Area" ngModel #area="ngModel" name="area"
+          [(ngModel)]='events.address.area' required>
+        <div *ngIf="area.touched && area.errors?.required" class="alert alert-danger">please enter state
+        </div>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-map-pin icon"></i>
+        <input class="input-field" type="text" placeholder="City" ngModel #city="ngModel" name="city"
+          [(ngModel)]='events.address.city' required>
+        <div *ngIf="city.touched && city.errors?.required" class="alert alert-danger">please enter city
+        </div>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-map icon"></i>
+        <input class="input-field" type="text" placeholder="State" ngModel #state="ngModel" name="state"
+          [(ngModel)]='events.address.state' required>
+        <div *ngIf="state.touched && state.errors?.required" class="alert alert-danger">please enter state
+        </div>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-file-text icon"></i>
+        <input class="input-field" type="text" placeholder="Details(If any)" ngModel #details="ngModel" name="details" [(ngModel)]='events.details'>
+      </div>
+      <div class="input-container">
+        <i class="fa fa-laptop icon"></i>
+        <input class="input-field" type="text" placeholder="Event URL" ngModel #eventUrl="ngModel" name="eventUrl" [(ngModel)]='events.eventUrl' required>
+        <div *ngIf="eventUrl.touched && eventUrl.errors?.required" class="alert alert-danger">please enter eventUrl</div>
+      </div>
+    </div>
+  </div>
+  <div text-align = "center">
+      <p>Post your Poster</p>
+      <img [src]="imageUrl" style="width: 150px;height: 150px;">
+            <input type="file" name = "poster" accept="image/*" [(ngModel)]='events.poster' (change)="handleFileInput($event.target.files)" >
+            <br>
+            <button type="submit" class="btn"  [disabled]="events.poster.value=='' || !eventForm.valid">Submit</button>
+          </div>
+          </form>
+      </div>
+      
+      </div>
+    </body>
+</html>

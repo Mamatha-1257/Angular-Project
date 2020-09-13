@@ -1,0 +1,126 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<body id = "show_bg_2">
+
+
+  <section class="py-5">
+    <div class="container">
+      <h1 class="display-4" style = "color:black">Events</h1>
+    </div>
+  </section>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 mb-4" *ngFor="let event of myEvents">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="RESTAPI/image/{{event.poster}}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              Event Name : {{event.eventName}}
+            </h4>
+            <h5>{{event.eventTag}} </h5><br>
+            <p class="card-text">
+              Event Domain : {{event.eventDomain}} <br>
+
+              Venue : {{event.address.street}}, {{event.address.area}}, {{event.address.city}}, {{event.address.state}}
+              <br>
+              Contact No: {{event.mobile}} <br>
+              Registration fee: {{event.regFee}} <br>
+              Timings: {{event.startDate | date:"dd-MM-yyyy"}} - {{event.endDate | date:"dd-MM-yyyy"}} <br>
+            </p><br>
+            <button class="btn btn-primary" width="100px" (click)="showEditPopup(event)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-primary" width="100px" (click)="deleteEvent(event)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-primary" width="120px" (click)="setEventId(event.eventId)"
+              routerLink="employeesForEvent">Participants</button><br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button *ngIf="calTime(event.endDate | date:'dd-MM-yyyy') === true" class= " btn btn-primary"
+              width="150px" (click)="setEventId(event.eventId)" routerLink="feedback">View feedback</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- /.row -->
+  </div>
+  <div class="container">
+    <div class="modal" id="eventModel">
+      <div class="modal-dialog">
+        <div class="modal-content" style = "background-image:
+       linear-gradient(180deg, rgba(252,252,252,1) 0%, rgba(197,198,193,0.8281513288909313) 67%, rgba(234,238,214,0.8477591720281863) 100%); width:700px;">
+
+          <div class="modal-header">
+            <span class="close" data-dismiss="modal">&times;</span>
+
+          </div>
+
+          <div class="modal-body">
+            <form class="form-group">
+              <!--Enter Employee Id:<input type="number" name="empId" [(ngModel)]="editObject.empId" class="form-control" ><br/>-->
+              Event Name:<input type="text" name="eventName" [(ngModel)]="editObject.eventName"
+                class="form-control"><br />
+              <h3> Event Category</h3>
+              <select placeholder="EventTag" name="eventTag" [(ngModel)]="editObject.eventTag"
+                class="form-control"><br />
+                <option value="" disabled select hidden>select event category</option>
+                <option value="Hackathons">Hackathons</option>
+                <option value="Workshops">Workshops</option>
+                <option value="SocialEvents">SocialEvents</option>
+                <option value="events">events</option>
+                <option value="otherEvents">Others</option>
+              </select>
+              <h3> Event Domain</h3>
+              <select placeholder="EventDomain" name="eventDomain" [(ngModel)]="editObject.eventDomain"
+                class="form-control"><br />
+                <option value="" disabled select hidden>select event domain</option>
+                <option value="AI">AI</option>
+                <option value="ML">ML</option>
+                <option value="DATA SCIENCE">DATA SCIENCE</option>
+                <option value="JAVA">JAVA</option>
+                <option value="PYTHON">PYTHON</option>
+                <option value="C">C</option>
+                <option value="IOT">IOT</option>
+              </select>
+              Start Date:<input type="date" name="startDate" [min]="minDate" [(ngModel)]="editObject.startDate"
+                class="form-control"><br />
+              End Date:<input type="date" name="endDate" [min]="minDate" [(ngModel)]="editObject.endDate"
+                class="form-control"><br />
+              Enter Contact Number:<input type="tel" name="mobile" [(ngModel)]="editObject.mobile"
+                class="form-control"><br />
+              Event Details:<input type="text" name="details" [(ngModel)]="editObject.details"
+                class="form-control"><br />
+              Event Website:<input type="text" name="eventUrl" [(ngModel)]="editObject.eventUrl"
+                class="form-control"><br />
+              <h3>Event Location</h3>
+              Street:<input type="text" name="street" [(ngModel)]="editObject.address.street"
+                class="form-control"><br />
+              Area:<input type="text" name="area" [(ngModel)]="editObject.address.area" class="form-control"><br />
+              City:<input type="text" name="city" [(ngModel)]="editObject.address.city" class="form-control"><br />
+              State:<input type="text" name="state" [(ngModel)]="editObject.address.state" class="form-control"><br />
+              Registration Fee:<input type="text" name="regFee" [(ngModel)]="editObject.regFee"
+                class="form-control"><br />
+
+                Winner:<input type="text" name="winner" [(ngModel)]="editObject.winner"
+                class="form-control"><br />
+                Runner:<input type="text" name="runner" [(ngModel)]="editObject.runner"
+                class="form-control"><br />
+            </form>
+
+
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" (click)="updateEvent()" data-dismiss="modal">Update</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  
+</body>

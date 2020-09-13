@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Great Vibes' rel='stylesheet'>
+  <style>
+    .fs {
+      font-family: 'Great Vibes';
+      font-size: 90px;
+      ;
+    }
+  </style>
+</head>
+<pre style="text-align: center;background:  linear-gradient(180deg, rgba(252,252,252,1) 0%, rgba(197,198,193,0.8281513288909313) 67%, rgba(234,238,214,0.8477591720281863) 100%);">
+  <br><br><br><br>
+
+  <input type="button" style = "text-align:center;font-size:30px;height:50px;width:270px;" class="btn btn-primary" value="Download" (click)="convetToPDF()" />
+        <body
+          style="height:1000px;background-image:  linear-gradient(180deg, rgba(252,252,252,1) 0%, rgba(197,198,193,0.8281513288909313) 67%, rgba(234,238,214,0.8477591720281863) 100%),url('/assets/img/certificate.jpg');text-align: center;background-color: rgb(212, 212, 200);">
+        <div id="contentToConvert" style = "padding-left: 25%;margin-top:-5%;height:800px;width:1500px;">
+          <div *ngIf = "event.winner === certificate.empName || event.runner === certificate.empName">
+              <div style="width:1000px; height:550px; padding:20px; text-align:center;background: url('/assets/img/cert2.jpg');background-repeat: no-repeat; background-size: cover;">
+                   <br><span class="fs">Certificate of Appreciation</span><br><br>
+                   <p style="font-size:40px">This certificate is presented to <b>{{certificate.empName}}</b>
+                    in recognition for an outstanding <br> performance in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <b>{{certificate.eventName}}</b> - <b>{{certificate.eventDomain}}</b> held on
+                   <b>{{certificate.issueDate | date:"dd-MM-yyyy"}}</b></p>
+                </div>
+              </div>
+
+
+
+
+            <div *ngIf = "event.winner !== certificate.empName && event.runner !== certificate.empName">
+              <div style="width:1000px; height:550px; padding:20px; text-align:center;background-color: rgb(212, 212, 200);background: url('/assets/img/cert2.jpg');background-repeat: no-repeat; background-size: cover);">
+                <br><span class="fs">Certificate of Participation</span><br><br>
+                <p style="font-size:40px">This certificate is presented to <b>{{certificate.empName}}</b>
+                 in recognition for participation in
+               <b>{{certificate.eventName}}</b> -<b>{{certificate.eventDomain}}</b> held on
+                <b>{{certificate.issueDate | date:"dd-MM-yyyy"}}</b></p>
+             </div>
+            </div>
+          </div>
+        </body>
+    </pre>
+
+</html>

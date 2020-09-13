@@ -1,0 +1,56 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"></head>
+<body id = "show_bg_2">
+  <div class="content">
+    <div class="o-c">
+      <div>
+        <h3><b>OTP has sent to mobile  {{phone}}  to verify your account</b></h3>
+        <br>
+        <br>
+        <div class="card" style = "text-align: center;">
+
+          <p class="a-o-i">Enter verification code</p>
+          <ng-otp-input type="password" name="otp" #ngOtpInput (onInputChange)="onOtpChange($event)"
+            *ngIf="showOtpComponent" [config]="config"></ng-otp-input>
+          <span *ngIf="otp" class="o-t-p"></span>
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-lg btn-primary btn-block btn-login font-weight-bold mb-2"
+                type="submit" style="width: 650px; font-size:20px; height:40px" (click)="verifyOtp()"><b>Verify</b></button>
+        </div>
+      </div>
+    </div>
+    <!--div id="form-box" style="text-align:center;">
+    <form #otpForm="ngForm" (ngSubmit)="verifyOtp(otpForm.value)">
+      <input type="password" style="width:500px" placeholder="Enter Otp" name="usrotp" ngModel required>
+      <button>Verify</button>
+    </form-->
+  </div>
+  <div clas="container">
+    <div class="modal" id="code">
+      <div class="modal-dialog">
+        <div class="modal-content"  style = " background-image:
+        linear-gradient(180deg, rgba(252,252,252,1) 0%, rgba(197,198,193,0.8281513288909313) 67%, rgba(234,238,214,0.8477591720281863) 100%)">
+
+          <div class="modal-header">
+            <span class="close" data-dismiss="modal">&times;</span>
+
+
+          </div>
+
+          <div class="modal-body">
+
+              <h3 style="text-align:center; color:black;"><b>Company Code</b></h3><br>
+              <h4 style="text-align:center; color:goldenrod;"><b>{{cmp.compCode}}</b></h4>
+              <!--Enter Employee Id:<input type="number" name="empId" [(ngModel)]="editObject.empId" class="form-control" ><br/>-->
+
+
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary btn-rounded" style="width: 100px; height:40px;" data-dismiss="modal" (click)="submit()">Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

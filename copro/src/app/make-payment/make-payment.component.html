@@ -1,0 +1,61 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"></head>
+
+  <body id = "show_bg_2">
+<div class="padding" style="right:5px;">
+    <div class="row">
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="col-sm-8 col-md-6">
+                <div class="card">
+                    <form  #payForm="ngForm"
+                    (ngSubmit)="pay(payForm.value)" novalidate>
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-6"> <span>CREDIT/DEBIT CARD PAYMENT</span> </div>
+                                <div class="col-md-6 text-right" style="margin-top: -5px;"> <img
+                                        src="https://img.icons8.com/color/36/000000/visa.png"> <img
+                                        src="https://img.icons8.com/color/36/000000/mastercard.png"> <img
+                                        src="https://img.icons8.com/color/36/000000/amex.png"> </div>
+                            </div>
+                        </div>
+                        <div class="card-body" style="height: 350px">
+                            <div class="form-group"> <label for="cc-number" class="control-label">CARD NUMBER</label>
+                                <input id="cc-number" class="input-lg form-control cc-number" autocomplete="cc-number"
+                                    type="text" placeholder="•••• •••• •••• ••••" ngModel #cardNumber="ngModel"
+                                    name="cardNumber" maxlength=16 required>
+                              </div>
+                            <div *ngIf="cardNumber.touched && cardNumber.errors?.minlength" class="alert alert-danger">
+                                please enter 16
+                                character </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group"> <label for="cc-exp" class="control-label">CARD
+                                            EXPIRY</label> <input id="cc-exp" type="text" maxlength=5
+                                            class="input-lg form-control cc-exp" autocomplete="cc-exp"
+                                            placeholder="•• / ••" required> </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group"> <label for="cc-cvc" class="control-label">CARD CVC</label>
+                                        <input id="cc-cvc" type="text" maxlength=4
+                                            class="input-lg form-control cc-cvc" autocomplete="off" placeholder="••••"
+                                            required> </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group"> <label for="numeric" class="control-label">CARD HOLDER
+                                    NAME</label> <input type="text"   ngModel class="input-lg form-control"> </div>
+                                  <div style="float:center">
+                                    <button  class="btn btn-primary btn-block" type="submit"  style="font-size: .8rem; height:35px;" [disabled]="!payForm.valid"><b>Make payment</b></button>
+                        </div>
+                                </div>
+                            </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  </div>
+  </body>
+

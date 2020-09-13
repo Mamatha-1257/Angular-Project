@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 15px;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+
+}
+button{
+    margin-top:25px;
+    width:80px;
+    font-size:19px;
+    margin-left:20%;
+
+}
+
+.btn:hover {
+  opacity: 1;
+}
+.container{
+    background:transparent;
+    padding:30px;
+    width:630px;
+    height:900px;
+    color: black;
+    top:40%;
+    left:60%;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: -1px 1px 60px 10px black ;
+    margin-top:75px;
+}
+body{
+    background-image: url("assets/img/signup1.jpeg");
+    background-size: 100% 100%;
+    width:100%;
+    height:1200px;
+    background-attachment: fixed;
+    font-family: new time 'Times New Roman', Times, serif;
+
+}
+</style>
+</head>
+<body id = "show_bg_2">
+  <br><br>
+<div class = "container">
+  <br><br>
+<form action="/action_page.php" style="max-width:500px;margin:auto"  #employeeForm = "ngForm" (ngSubmit)="registerEmployee(employeeForm.value)">
+  <br><h1 style = "text-align: center; color:white; font-size: 32px"><b>Register Form</b></h1><br><br>
+    <div class="input-container">
+        <i class="fa fa-drivers-license icon"></i>
+        <input class="input-field" type="text" placeholder="Employee ID" name="empId" #empId="ngModel" [(ngModel)] = 'employee.empId' required>
+        <div *ngIf="empId.touched && empId.errors?.required" class="alert alert-danger">please enter empId</div>
+      </div>
+      <div class="input-container">
+  <i class="fa fa-user icon"></i>
+  <input class="input-field" type="text" placeholder="Employee Name" name="empName" #empName="ngModel" [(ngModel)] = 'employee.empName' required>
+  <div *ngIf="empName.touched && empName.errors?.required" class="alert alert-danger">please enter empName</div>
+</div>
+
+<div class="input-container">
+  <i class="fa fa-qrcode icon"></i>
+  <input class="input-field" type="text" placeholder="Company code" name="companyCode" #companyCode="ngModel" [(ngModel)] = 'employee.companyCode' required>
+  <div *ngIf="companyCode.touched && companyCode.errors?.required" class="alert alert-danger">please enter compCode</div>
+</div>
+
+<div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" placeholder="Mail ID" name="empMail" #empMail="ngModel" [(ngModel)] = 'employee.empMail' required>
+    <div *ngIf="empMail.touched && empMail.errors?.required" class="alert alert-danger">please enter empMail</div>
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-phone icon"></i>
+    <input class="input-field" type="text" placeholder="Mobile" ngModel #mobile="ngModel" name="mobile"
+          [(ngModel)]='employee.mobile' minlength=10 maxlength=10 required>
+        <div *ngIf="mobile.touched && mobile.errors?.required" class="alert alert-danger">please enter mobile number
+        </div>
+        <div *ngIf="mobile.touched && mobile.errors?.minlength" class="alert alert-danger">Please enter atleast 10 digits
+        </div>
+        <div *ngIf="mobile.touched && mobile.errors?.maxlength" class="alert alert-danger">Can't exceed 10 digits
+        </div>
+  </div>
+  <div class="input-container">
+    <i class="fa fa-star icon"></i>
+    <select class="input-field" type="text" placeholder="Area of interest" name="interest1" #interest1="ngModel" [(ngModel)] = 'employee.interest1'required>
+      <div *ngIf="interest1.touched && interest1.errors?.required" class="alert alert-danger">please enter interest1
+      </div>
+      <option value = "" disabled select hidden>choose your interest</option>
+      <option value="AI">AI</option>
+      <option value="ML">ML</option>
+      <option value="DATA SCIENCE">DATA SCIENCE</option>
+      <option value="JAVA">JAVA</option>
+      <option value="PYTHON">PYTHON</option>
+      <option value="C">C</option>
+      <option value="IOT">IOT</option>
+    </select>
+  </div>
+  <div class="input-container">
+    <i class="fa fa-star icon"></i>
+    <select class="input-field" type="text" placeholder="Area of interest" name="interest2" #interest1="ngModel" [(ngModel)] = 'employee.interest2'required>
+      <div *ngIf="interest1.touched && interest1.errors?.required" class="alert alert-danger">please enter interest1
+      </div>
+      <option value = "" disabled select hidden>choose your interest</option>
+      <option value="AI">AI</option>
+      <option value="ML">ML</option>
+      <option value="DATA SCIENCE">DATA SCIENCE</option>
+      <option value="JAVA">JAVA</option>
+      <option value="PYTHON">PYTHON</option>
+      <option value="C">C</option>
+      <option value="IOT">IOT</option>
+    </select>
+  </div>
+  <div class="input-container">
+    <i class="fa fa-star icon"></i>
+    <select class="input-field" type="text" placeholder="Area of interest" name="interest3" #interest1="ngModel" [(ngModel)] = 'employee.interest3'required>
+      <div *ngIf="interest1.touched && interest1.errors?.required" class="alert alert-danger">please enter interest1
+      </div>
+      <option value = "" disabled select hidden>choose your interest</option>
+      <option value="AI">AI</option>
+      <option value="ML">ML</option>
+      <option value="DATA SCIENCE">DATA SCIENCE</option>
+      <option value="JAVA">JAVA</option>
+      <option value="PYTHON">PYTHON</option>
+      <option value="C">C</option>
+      <option value="IOT">IOT</option>
+    </select>
+  </div>
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="empPassword" minlength=6 [(ngModel)]='empPassword' required>
+    <div *ngIf="empPassword.touched && empPassword.errors?.required" class="alert alert-danger">please enter password
+    </div>
+    <div *ngIf="empPassword.touched && empPassword.errors?.minlength" class="alert alert-danger">please enter 6
+      characters </div>
+  </div>
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Confirm Password" name="confirmPassword" minlength=6 [(ngModel)]='confirmPassword' required>
+    <div *ngIf="confirmPassword.touched && confirmPassword.errors?.required" class="alert alert-danger">please enter
+      confirm password </div>
+    <div *ngIf="confirmPassword.touched && confirmPassword.errors?.minlength" class="alert alert-danger">please enter 6
+      characters </div>
+  </div>
+  <button type="submit" class="btn" style="color:white" [disabled]="!employeeForm.valid">Register</button>
+
+
+</form>
+</div>
+</body>
+</html>

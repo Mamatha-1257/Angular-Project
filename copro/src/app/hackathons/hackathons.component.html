@@ -1,0 +1,40 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<body id = "show_bg_2">
+
+
+  <section class="py-5">
+  </section>
+  <!-- Page Content -->
+  <div class="container mt-40 mb-30">
+    <h1 class="display-4">Hackathons</h1>
+    <p class="lead">Events put together to bring the coding community together.It s a design sprint-like event; often,
+      in which computer programmers and others involved in software development.Challenges enable you to compete with
+      your peers.</p>
+    <div class="row mt-30">
+      <div class="col-md-4 col-sm-6" *ngFor="let hack of allevents">
+        <div *ngIf="calTime(hack.startDate | date:'dd-MM-yyyy') === true" class="card h-100">
+        <div class="box21" style = "height:400px; width:380px; text-align: center;">
+          <img src="RESTAPI/image/{{hack.poster}}" style = "height:380px; width:350px;" alt="">
+          <div class="box-content" style = "font-size:20px; color:black">
+            <h4 class="title">{{hack.eventName}}</h4>
+            <p class="card-text">
+              Event Domain : {{hack.eventDomain}} <br>
+              Registration Fee : {{hack.regFee}} <br>
+              Venue : {{hack.address.street}}, {{hack.address.area}}, {{hack.address.city}}, {{hack.address.state}} <br>
+              Contact No: {{hack.mobile}} <br>
+              Timings: {{hack.startDate | date:"dd-MM-yyyy"}} - {{hack.endDate | date:"dd-MM-yyyy"}} <br>
+              <button class="btn btn-primary" width="300px" (click)="eventRegister(hack)"
+              routerLink="eventregistration">Register</button>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- /.row -->
+  </div>
+</body>

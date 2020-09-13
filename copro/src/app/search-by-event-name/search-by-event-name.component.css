@@ -1,0 +1,96 @@
+.navbar {
+  min-height: 80px;
+}
+.nav a{
+  color: white !important;
+  font-size: 2.8em !important;
+  }
+.nav li{
+  padding-right:5px;
+ }
+ .navbar-brand {
+  padding: 0 15px;
+  height: 80px;
+  line-height: 80px;
+}
+.bg {
+  /* The image used */
+  background-image: url("/assets/img/searchbyevent.jpg");
+
+  /* Full height */
+  height: 1000px;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#show_bg_2 {
+  background-image:
+  linear-gradient(180deg, rgba(252,252,252,1) 0%, rgba(197,198,193,0.8281513288909313) 67%, rgba(234,238,214,0.8477591720281863) 100%),
+ /* linear-gradient(0deg, rgba(185,149,213,0.43039222524947474) 0%, rgba(58,149,213,0.8505602924763656) 25%),
+  linear-gradient(113deg, rgba(163,236,220,1) 0%, rgba(139,193,237,0.4107843821122199) 70%),*/
+  url('/assets/img/search.jpg');
+  width: 1900px;
+  height: 1000px;
+  background-size: cover;
+  color: black;
+  padding: 20px;
+}
+.box6{background:white;position:relative}
+.box6:after{background:white;position:absolute;top:0;left:-30%; bottom:0;right:70%;transform:skew(20deg) translateX(-75%)}
+.box6:hover:after{transform:skew(20deg) translateX(0)}
+.box6 img{width:100%;height:auto}
+.box6:hover img{opacity:0}
+.box6 .box-content{padding:20px;text-align:center; color:black;position:absolute;top:0;right:0;z-index:1}
+.box6 .icon,.box7 .icon{padding:0;list-style:none}
+.box10 .icon li a,.box11,.box12,.box13,.box14,.box6 .icon li a,.box7,.box7 .icon li a,.box8,.box8 .icon li a{text-align:center}
+.box6 .title{font-size:20px;font-weight:900;color:black;margin:0 0 10px;transform:scale(0)}
+.box6:hover .title{transform:scale(1)}
+.box6 .icon li,.box6 .post{opacity:1;transform:translateX(40px);transition:all .35s ease 0s}
+.box6 .post{display:block;font-size:14px;color:#fff;margin-bottom:5px}
+.box6 .icon{display:inline-block;margin:0}
+.box6:hover .icon li,.box6:hover .post{opacity:1;transform:translateX(0)}
+.box6:hover .icon li:first-child{transition-delay:.1s}
+.box6:hover .icon li:nth-child(2){transition-delay:.2s}
+.box6:hover { 
+  border: groove 10px;
+  border-color:black;
+  border-width: 10px; }
+.box6 .icon li a{display:block;width:35px;height:35px;line-height:35px;background:#fff;font-size:18px;color:white;margin-bottom:5px;transition:all .35s ease}
+.box6 .icon li a:hover{background:white;color:#fff}
+@media only screen and (max-width:990px){.box6{margin-bottom:30px}
+}
+
+.input-group.md-form.form-sm.form-2 input {
+  margin-left :25%;
+  margin-top:3%;
+  font-size: 35px;
+  border-top-left-radius:1rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius:1rem;
+  border-bottom-right-radius: 1rem;
+  border: 2px solid black;
+}
+.input-group.md-form.form-sm.form-2 input.purple-border {
+  border: 2px solid black;
+  border-top-left-radius:1rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius:1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.input-group-text{
+  margin-top:3%;
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+  border-top-left-radius:1rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius:1rem;
+  border-bottom-right-radius: 1rem;
+  border: 1px solid rgb(235, 245, 146);
+  background: black;
+  text-align:center;
+  
+}
