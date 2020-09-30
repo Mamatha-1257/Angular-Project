@@ -59,7 +59,7 @@ export class CompanyregisterComponent implements OnInit {
 
     }
     });
-  
+
   }
 
 
@@ -81,10 +81,10 @@ export class CompanyregisterComponent implements OnInit {
         alert('Registration successful!!');
       }
     });
-   
+
     //this.toastr.success('Registration Successful', 'Welcome to Co@Pro!!!');
    // alert('Registration Successful, Welcome to Co@Pro!!!');
-   
+
   }
   else {
    alert("Password mismatch !!!");

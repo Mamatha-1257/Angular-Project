@@ -1,0 +1,149 @@
+\documentclass[pdfLaTex,compress]{beamer}
+\usetheme{Singapore}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\usepackage[demo]{graphicx}
+\usepackage{babel,blindtext}
+\usepackage{lipsum}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric}
+
+\usetheme{Madrid}
+\setbeamertemplate{footline}[frame number]{}
+
+\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+
+\usecolortheme[named=UBCblue]{structure}
+
+\begin{block}{}
+\begin{center}
+BVRIT Hyderabad College of Engineering for Women\\
+WISE Angular project
+    
+\end{center}
+\end{block}
+\title{Co@pro}
+\subtitle{Connecting professionals\ldots}
+\author{I.Tanmayee - 18WH1A0485\\N.Mamatha - 18WH1A1257\\V.Sai Sudha - 18WH1A0501\\S.S.L.Nikhita - 18WH1a0522\\A.Satya Anusha - 18WH1A1201}
+\date{\today}
+\begin{document}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{cover.png}}
+\maketitle
+\end{frame}}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{cover.png}}
+\begin{frame}{Co@pro in a Nutshell!}
+\begin{block}{}
+\begin{center}
+A platform that helps the professionals to get a wider exposure to events happening around in the IT world!
+\end{center}
+\end{block}
+\hspace{2cm}
+\pause
+\begin{block}{Tech Stack}
+\begin{center}
+\begin{itemize}
+    \item Database\hspace{1cm}MySQL \\
+    \item ORM\hspace{1.6cm}Hibernate
+    \item Backend\hspace{1.2cm}RESTAPI
+    \item Framework\hspace{0.8cm}Angular 
+    \item Frontend \hspace{0.8cm} HTML, CSS, Bootstrap, JavaScript
+\end{itemize}
+
+\end{center}
+\end{block}
+\end{frame}}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{cover.png}}
+\begin{frame}{Roadmap to Co@pro}
+\begin{center}
+    \includegraphics[width=8cm, height=8.5cm]{co.jpeg}
+
+\end{center}
+\end{frame}}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{cover.png}}
+\begin{frame}{\textbf{Features}}
+\begin{itemize}
+    \item SMTP server
+    \item SMS and OTP Generation
+    \item Payment Gateway
+    \item Feedback submission
+    \item Generation of pdf 
+\end{itemize}
+\end{frame}}
+
+
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{cover.png}}
+\begin{frame}{\textbf{Challenges}}
+\begin{itemize}
+    \item Tables mapping in ORM Database
+    \item Image uploading
+    \item Payment validations
+\end{itemize}
+\end{frame}}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{cover.png}}
+\begin{frame}
+\begin{centering}
+
+\hfill
+\hfill
+\\
+\vspace{1cm}
+\large{\textbf{DEMO}}
+
+\end{centering}
+\end{frame}}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{cover.png}}
+\begin{frame}
+\begin{centering}
+
+\hfill
+\hfill
+\hfill
+\hfill
+\\
+\vspace{1cm}
+\begin{center}
+\large{\textbf{Link to Our GitHub Repo!!}}
+\vspace{1cm}
+\large{\url{https://github.com/Mamatha-1257/Angular-Project.git}}
+\large{\textbf{Link to Our GitLab Repo!!}}
+\large{\url{https://gitlab.com/sai_sudha/angular-project.git}}
+\end{center}
+\end{centering}
+\end{frame}}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{than.png}}
+\begin{frame}
+\end{frame}}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{cover.png}}
+\begin{frame}
+\begin{centering}
+
+\hfill
+\hfill
+\\
+\vspace{1cm}
+\Large{\textbf{THANK YOU!}}
+
+\end{centering}
+\end{frame}}
+\end{document}

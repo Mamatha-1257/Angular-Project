@@ -1,10 +1,11 @@
 import { Component, OnInit, ElementRef ,ViewChild} from '@angular/core';
-import * as jspdf from 'jspdf';
+//import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
 import { Router } from '@angular/router';
 import { EventsService } from '../events.service';
 import { EmployeeService } from '../employee.service';
 import { CompanyService } from '../company.service';
+import jsPDF from 'jspdf';
 @Component({
   selector: 'app-certificate',
   templateUrl: './certificate.component.html',
@@ -32,15 +33,17 @@ var data = document.getElementById('contentToConvert');
 html2canvas(data).then(canvas => {
 // Few necessary setting options
 var imgWidth = 208;
-var pageHeight = 90;
+var pageHeight = 30;
 var imgHeight = canvas.height * imgWidth / canvas.width;
 var heightLeft = imgHeight;
 
 const contentDataURL = canvas.toDataURL('image/jpeg')
-let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
-var position = 0;
-pdf.addImage(contentDataURL, 'JPEG', -30, position, imgWidth, imgHeight)
-pdf.save('new-file.pdf'); // Generated PDF
+let pdf = new jsPDF('l', 'mm', [790, 490]); // A4 size page of PDF
+var width = pdf.internal.pageSize.getWidth();
+var height = pdf.internal.pageSize.getHeight();
+var position = -5;
+pdf.addImage(contentDataURL, 'JPEG', -120, position, width+120, height+30)
+pdf.save(this.emp.empName +'.pdf'); // Generated PDF
 });
 }
 }

@@ -32,12 +32,12 @@
               Registration fee: {{event.regFee}} <br>
               Timings: {{event.startDate | date:"dd-MM-yyyy"}} - {{event.endDate | date:"dd-MM-yyyy"}} <br>
             </p><br>
-            <button class="btn btn-primary" width="100px" (click)="showEditPopup(event)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary" width="100px" (click)="deleteEvent(event)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary" width="120px" (click)="setEventId(event.eventId)"
-              routerLink="employeesForEvent">Participants</button><br><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button *ngIf="calTime(event.endDate | date:'dd-MM-yyyy') === true" class= " btn btn-primary"
-              width="150px" (click)="setEventId(event.eventId)" routerLink="feedback">View feedback</button>
+            &nbsp;<button type="button" class="btn btn-dark" style="width:120px;" (click)="showEditPopup(event)">Edit</button>&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-dark" style="width:120px;" (click)="deleteEvent(event)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+            &nbsp;<button type="button" class="btn btn-dark" style="width:120px;" (click)="setEventId(event.eventId)"
+              routerLink="employeesForEvent">Participants</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button *ngIf="calTime(event.endDate | date:'dd-MM-yyyy') === true" type="button" class="btn btn-dark"
+            style="width:120px;" (click)="setEventId(event.eventId)" routerLink="feedback">View feedback</button>
           </div>
 
         </div>
@@ -112,7 +112,7 @@
 
           </div>
           <div class="modal-footer">
-            <button class="btn btn-primary" (click)="updateEvent()" data-dismiss="modal">Update</button>
+            <button type="button" class="btn btn-dark" (click)="updateEvent()" data-dismiss="modal">Update</button>
           </div>
         </div>
 
@@ -122,5 +122,5 @@
 
 
 
-  
+
 </body>

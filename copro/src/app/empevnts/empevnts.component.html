@@ -27,9 +27,9 @@
               Registration fee: {{event.regFee}} <br>
               Timings: {{event.startDate | date:"dd-MM-yyyy"}} - {{event.endDate | date:"dd-MM-yyyy"}} <br>
             </p><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button *ngIf="calTime(event.endDate | date:'dd-MM-yyyy') === true" class="btn btn-primary" width="100px"
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button *ngIf="calTime(event.endDate | date:'dd-MM-yyyy') === true" type="button" class="btn btn-dark" width="100px"
                (click)="showEditPopup(event)">feedback</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <button *ngIf="calTime(event.endDate | date:'dd-MM-yyyy') === true" class="btn btn-primary" width="100px"
+               <button *ngIf="calTime(event.endDate | date:'dd-MM-yyyy') === true" type="button" class="btn btn-dark" width="100px"
                (click)="viewCertificate(event)">View certificate</button>
               <!--<button *ngIf="calTime(event.endDate | date:'dd-MM-yyyy') === true" class="btn btn-primary" width="100px"><a routerLink = "certificate" style="color:azure">View Certificate</a></button><br>-->
 
@@ -79,7 +79,7 @@
 
           </div>
           <div class="modal-footer">
-            <button class="btn btn-primary" (click)="submitFeedback(feedbackForm.value)"
+            <button class="btn btn-dark" (click)="submitFeedback(feedbackForm.value)"
               data-dismiss="modal">Submit</button>
 
           </div>

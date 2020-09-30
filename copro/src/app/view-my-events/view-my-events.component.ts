@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../events.service';
 import { CompanyService } from '../company.service';
 import * as moment from 'moment';
+
 declare var jQuery:any;
 @Component({
   selector: 'app-view-my-events',
@@ -40,11 +41,11 @@ export class ViewMyEventsComponent implements OnInit {
   this.cd=new Date().getDate().toString();
  this.ed= new Date(endDate).getDate().toString();
   if (Number(this.ey) <= Number(this.cy)){
-   
+
     if (Number(this.em) <= Number(this.cm)) {
-     
+
       if (Number(this.ed) <= Number(this.cd)) {
-       
+
         return true;
       }
     }

@@ -40,8 +40,6 @@ export class HomeComponent implements OnInit {
 
   }
 
-  
-
   private getDismissReason(reason: any): string {
 
     if (reason === ModalDismissReasons.ESC) {
@@ -79,6 +77,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.eventService.getAllSeminars().subscribe((result:any) => {console.log(result);this.allSeminars=result;});
     this.eventService.getAllOtherEvents().subscribe((result:any) => {console.log(result);this.allOtherEvents=result;});
+
+
+  $(document).ready(function() {
+    $('#carouselExampleIndicators').carousel();
+    });
+  
   }
 
 }

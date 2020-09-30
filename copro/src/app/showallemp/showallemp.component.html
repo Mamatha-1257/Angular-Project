@@ -4,14 +4,10 @@
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 </head>
 <body id = "show_bg_2">
-
-<br>
-<br>
-<br>
-<br>
 <br><br>
-<div class = "container">
-    
+
+<!--<div class = "container">
+
   <h1 style = "text-align:center;"><b style = color:black>List of Employees...</b></h1>
   <br><br>
 <table class="table table-bordered tabl-stripped table-hover" >
@@ -41,18 +37,53 @@
         <td style = "text-align:center; font-size: larger;">{{emp.status}}</td>
 
         <td>
-            <button (click)="RejectEmp(emp)" class = "glyphicon glyphicon-remove">Reject</button>
+            <button (click)="RejectEmp(emp)" type="button" class="btn btn-dark">
+              <span class="glyphicon glyphicon-remove"></span>Reject</button>
         </td>
 
         <td>
-            <button (click)="AcceptEmp(emp)" class = "glyphicon glyphicon-ok">Accept</button>
+            <button (click)="AcceptEmp(emp)" type="button" class="btn btn-dark">
+              <span class="glyphicon glyphicon-ok"></span>Accept</button>
     </td>
 
     <td>
-        <button (click)="deleteEmp(emp)" class = "glyphicon glyphicon-trash">Delete</button>
+        <b/utton (click)="deleteEmp(emp)" type="button" class="btn btn-dark">
+          <span class="glyphicon glyphicon-trash-*"></span>Delete</button>
 </td>
     </tr>
 </tbody>
 </table>
+</div>-->
+<!--div class="col-md-4 col-sm-6" style = "text-align:center; margin-top:10%;margin-left:12%; height:800px;"-->
+<div class="container mt-40 mb-30">
+  <h1 class="display-4">List of Employees</h1>
+  <div class="row mt-30">
+    <div class="col-md-4 col-sm-6" style = "text-align:center; margin-top:10%;margin-left:12%; height:800px;" *ngFor='let emp of emp'>
+  <div class="box13">
+      <img src="assets/img/avatar.jpg" style= "height:550px; width:600px;">
+      <div class="box-content">
+        <br>
+        <p style = "font-size: 22px"><b>Id :  </b>{{emp.empId}} </p>
+        <p style = "font-size: 22px"><b>Name :  </b>{{emp.empName}} </p>
+        <p style = "font-size: 22px"><b>E-Mail :  </b>{{emp.empMail}} </p>
+        <p style = "font-size: 22px"><b>Contact :  </b>{{emp.mobile}} </p>
+        <p style = "font-size: 22px"><b>Interest 1 :  </b>{{emp.interest1}}</p>
+        <p style = "font-size: 22px"><b>Interest 2 :  </b>{{emp.interest2}}</p>
+        <p style = "font-size: 22px"><b>Interest 3 :  </b>{{emp.interest3}}</p>
+        <br>
+        <button (click)="RejectEmp(emp)" type="button" class="btn btn-dark">
+          <span class="glyphicon glyphicon-remove"></span>Reject</button>&nbsp;&nbsp;
+          <button (click)="AcceptEmp(emp)" type="button" class="btn btn-dark">
+            <span class="glyphicon glyphicon-ok"></span>Accept</button><br><br>
+            <button (click)="deleteEmp(emp)" type="button" class="btn btn-dark">
+          <span class="glyphicon glyphicon-trash"></span>Delete</button>
+          <!--h3 class="title">Williamson</h3-->
+      </div>
+  </div>
 </div>
+</div>
+</div>
+
+
+
 </body>

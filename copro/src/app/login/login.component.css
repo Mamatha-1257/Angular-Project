@@ -134,7 +134,7 @@ h2 {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: black;;
   content: "";
   transition: width 0.2s;
 }

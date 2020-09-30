@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../events.service';
 import { CompanyService } from '../company.service';
-import {Moment} from 'moment'
-import * as moment from 'moment';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import * as moment from 'moment';
 @Component({
   selector: 'app-eventregister',
   templateUrl: './eventregister.component.html',

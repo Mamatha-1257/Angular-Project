@@ -9,11 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  employee:any;
+  myEmp:any;
   constructor(private empService:EmployeeService, private cmpService:CompanyService, private router:Router) {
   }
-
   ngOnInit(): void {
+    this.employee = this.empService.getEmpdetails();
+    console.log(this.employee);
+    this.empService.getEmpByID(this.employee).subscribe((result:any) => {console.log(result);this.myEmp=result;});
   }
+
   userck():boolean {
     if(this.empService.getEmpdetails() == null && this.cmpService.getuserdetails() == null){
       return false;
